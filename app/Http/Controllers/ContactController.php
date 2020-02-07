@@ -20,4 +20,12 @@ class ContactController extends Controller
     {
          return $contact;
     }
+    public function update(Contact $contact){
+        $contact->update([
+            'name' => request('name'),
+            'email' => request('email'),
+            'birthday' => request('birthday'),
+            'company' => request('company'),
+        ]);
+    }
 }
