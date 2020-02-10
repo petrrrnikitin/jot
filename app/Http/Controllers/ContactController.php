@@ -3,25 +3,39 @@
 namespace App\Http\Controllers;
 
 use App\Contact;
+use App\Http\Resources\Contact as ContactResource;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    public function store() {
-        Contact::create($this->validateData());
+    public function index()
+    {
+        $this->authorize('viewAny', Contact::class);
+        return ContactResource::collection(request()->user()->contacts);
+    }
+
+    public function store()
+    {
+        $this->authorize('create', Contact::class);
+        request()->user()->contacts()->create($this->validateData());
     }
     public function show(Contact $contact)
     {
-         return $contact;
+        $this->authorize('view', $contact);
+
+        return new ContactResource($contact);
     }
 
     public function update(Contact $contact)
     {
+        $this->authorize('update', $contact);
+
         $contact->update($this->validateData());
     }
 
     public function destroy(Contact $contact)
     {
+        $this->authorize('delete', $contact);
         $contact->delete();
     }
 
