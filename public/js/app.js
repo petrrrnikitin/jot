@@ -34954,8 +34954,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\nikit\Desktop\jot\jot\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\nikit\Desktop\jot\jot\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\phpprojects\jot\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\phpprojects\jot\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
